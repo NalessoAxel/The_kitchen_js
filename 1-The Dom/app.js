@@ -13,6 +13,7 @@ option2.innerText = 'normal franchises'
 
 const ul = document.querySelector('ul')
 const body = document.querySelector('body')
+let li = document.querySelector('li')
 
 let children = ul.childNodes
 let i = 0
@@ -27,7 +28,7 @@ select.appendChild(option2)
 
 
 
-/* div.insertBefore() */
+
 
 
 for (let child of children) {
@@ -80,6 +81,7 @@ for (let child of children) {
 function shuffle(){
     const oldUl = document.querySelector('ul')
     const newUl = document.createElement('ul')
+    
   
     newUl.appendChild(oldUl.children[0])
   
@@ -95,11 +97,12 @@ function shuffle(){
   document.body.addEventListener('keyup', function(e){
     if(e.key == 'r'){
     shuffle()
-}
-})
-
-
-
-
-
+    
+    } else if(e.key == "d") {
+        const add = document.createElement('li')
+        add.textContent = document.querySelector("body > ul > li.important").textContent
+        li.parentElement.insertBefore(add,li)
+  }
+        
+    })
 
